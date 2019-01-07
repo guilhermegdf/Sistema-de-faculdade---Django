@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">    
+    <link rel="icon" href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <script src="script.js"></script>
+    {% block scripts %}{% endblock %}
+</head>
+
+<body>
+    <div class="navbar-menu">
+        <img src="{% static 'imagens/logo.png' %}" id="logo_impacta" />
+        <ul>
+            <li>
+               <a href="/">Index</a>
+            </li>
+            <li>
+                <a href="/lista_contas">Contas</a>
+             </li>
+             <li>
+                <a href="/lista_curriculo">Curriculos</a>
+             </li>
+             <li>
+                <a href="/lista_restrito">Restrito</a>
+            </li>
+            <li>
+              <a href="/login">Login</a>
+            </li>
+        </ul>
+    </div>
+    <main>
+        {% block conteudo %}
+        {% endblock %}
+     </main>
+     <footer class="footer align-center">
+        11 3254-8300 - Impacta 2018 - Todos os direitos reservados.
+    </footer>
+</body>
+
+</html>

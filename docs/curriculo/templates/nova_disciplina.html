@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Nome da disciplina: </label><br>
+                    <input class="form-control formTo" type="text" name="nome" maxlength="1000" placeholder="Digite a disciplina" value="{{disciplina.nome}}" reiquired />
+
+                    <br>
+                    <br>
+                
+                    <label for="">Data: </label><br>
+                    <input class="form-control formTo" type="date" name="data" placeholder="00/00/0000" value="{{disciplina.data}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Status: </label><br>
+                    <select name="status" required>
+                        {%for statu in status%}
+                            <option value={{statu}}>{{statu}}</option>
+                        {%endfor%}
+                    </select>                    
+                    <br>
+                    <br>
+                
+                    <label for="">Plano de Ensino: </label><br>
+                    <input class="form-control formTo" type="text" name="planodeensino" maxlength="1000" value="{{disciplina.planodeensino}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Carga Horaria: </label><br>
+                    <input class="form-control formTo" type="number" name="cargahoraria" value="{{disciplina.cargahoraria}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Competências: </label><br>
+                    <input class="form-control formTo" type="text" name="competencias" placeholder="Digite as competências" value="{{disciplina.competencias}}" required/>
+                
+                    <br>
+                    <br>
+                
+                    <label for="">Habilidades: </label><br>
+                    <input class="form-control formTo" type="text" name="habilidades" maxlength="1000" placeholder="area de texto" value="{{disciplina.habilidades}}"/>
+                   
+                    <br>
+                    <br>
+                    
+                    <label for="">Ementa: </label><br>
+                    <input class="form-control formTo" type="text" name="ementa" maxlength="1000" placeholder="area de texto" value="{{disciplina.ementa}}"/>
+                  
+                    <br>
+                    <br>
+                  
+                    <label for="">Conteúdo Programatico: </label><br>
+                    <input class="form-control formTo" type="text" name="conteudoprogramatico" maxlength="1000" placeholder="area de texto" value="{{disciplina.conteudoprogramatico}}"/>
+                  
+                    <br>
+                    <br>
+                  
+                    <label for="">Bibliografia Básica: </label><br>
+                    <input class="form-control formTo" type="text" name="bibliografiabasica" maxlength="1000" placeholder="area de texto" value="{{disciplina.bibliografiabasica}}"/>
+                   
+                    <br>
+                    <br>
+                   
+                    <label for="">Bibliografia Complementar: </label><br>
+                    <input class="form-control formTo" type="text" name="bibliografiacomplementar" maxlength="1000" placeholder="area de texto" value="{{disciplina.bibliografiacomplementar}}"/>
+                   
+                    <br>
+                    <br>
+
+                    <label for="">Percentual Pratico: </label><br>
+                    <input class="form-control formTo" type="number" name="percentualpratico" maxlength="100" placeholder="100" value="{{disciplina.percentualpratico}}"/>
+                   
+                    <br>
+                    <br>
+
+                    <label for="">Percentual Teórico: </label><br>
+                    <input class="form-control formTo" type="number" name="percentualteorico" maxlength="100" placeholder="100" value="{{disciplina.percentualteorico}}"/>
+                   
+                    <br>
+                    <br>
+                    
+
+                    <div style="text-align: center;">
+                    <button type="submit" class="btn-yy" style="color: white;">
+                        Enviar
+                    </button>
+                </div>
+        </div>
+</div>
+</form>
+{% endblock  %}

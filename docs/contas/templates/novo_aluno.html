@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+        
+                   <h4> <br> Formulário. </h4>
+                <hr>
+                    
+                    <label>Login: </label><br> <br>
+                    <input class="form-control formTo" type="text" name="login" maxlength="1000" placeholder="login" value="{{aluno.login}}" reiquired />
+
+                    <br>
+                    <br>
+                
+                    <label >Senha: </label><br> <br>
+                    <input class="form-control formTo" type="password" name="senha" maxlength="10" placeholder="senha" value="{{aluno.senha}}" required/>
+
+                    
+                    <br>
+                    <br>
+                
+                    <label >Nome: </label><br> <br>
+                    <input class="form-control formTo" type="text" name="nome" maxlength="20" placeholder="nome" value="{{aluno.nome}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label >E-mail: </label><br> <br>
+                    <input class="form-control formTo" type="email" name="email" maxlength="1000" placeholder="email" value="{{aluno.email}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label >Celular: </label><br> <br>
+                    <input class="form-control formTo" type="text" name="celular" maxlength="15" placeholder="celular" value="{{aluno.celular}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label >RA: </label><br> <br>
+                    <input class="form-control formTo" type="number" name="ra" placeholder="ra" value="{{aluno.ra}}" required/>
+                
+                    <br>
+                    <br>
+                
+                    <label >Foto: </label><br> <br>
+                    <input class="form-control formTo" type="text" name="foto" maxlength="1000" placeholder="foto" value="{{aluno.foto}}"/>
+                    
+                    <br>
+                    <br>
+                    
+                    <label >Data de expiração: </label><br> <br>
+                    <input class="form-control formTo" type="date" name="dtexpiracao" placeholder="01/01/0001" value="{{aluno.dtexpiracao}}" required/>
+                    
+                    <br>
+                    <br>
+                    
+                <div style="text-align: center;">
+                    <button type="submit" class="btn-yy" style="color: white;">
+                        Enviar
+                    </button>
+        </div>
+</div>
+</form>
+{% endblock  %}

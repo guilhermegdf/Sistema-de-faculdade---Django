@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <article>
+        <a href="/disciplina/incluir/">
+            <div class="btn-ww">
+                <p class="add-aluno">Incluir novo Disciplina</p>
+            </div>
+        </a>
+        {% for item in disciplina %}
+            <div class="box_type">
+                <div class="text-content">
+                    <br>
+                    <img src='{{ img }}' alt="">
+                    <h2> <a class="a_cursos" href="/disciplina/{{item.nome}}"> {{ item.nome }} </a> </h2>
+                    <br>
+                    <div class="flex">  
+                    <a class="btn-xx" href="/disciplina/alterar/{{item.id}}">Alterar</a><br/>
+                    <a class="btn-yy" href="/disciplina/remover/{{item.id}}">Remover</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </article>
+{% endblock  %}

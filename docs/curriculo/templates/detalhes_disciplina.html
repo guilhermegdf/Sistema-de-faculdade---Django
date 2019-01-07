@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+        <div class="premios box_type">
+            <div class="text-content">
+                <h1>{{titulo}}</h1>
+                {%for i in resumo%}
+                <p>{{i}}</p><br>
+                {%endfor%}
+            </div>
+        </div>
+{% endblock  %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Assunto: </label><br>
+                    <input class="form-control formTo" type="text" name="assunto" maxlength="1000" placeholder="Digite o assunto" value="{{mensagem.assunto}}" reiquired />
+
+                    <br>
+                
+                    <label for="">Referência: </label><br>
+                    <input class="form-control formTo" type="text" name="referencia" maxlength="1000" placeholder="Área de texto" value="{{mensagem.referencia}}" required/>
+                    
+                    <br>
+
+                    <label for="">Conteudo: </label><br>
+                    <input class="form-control formTo" type="text" name="conteudo" maxlength="1000" value="{{mensagem.conteudo}}" required/>
+                    
+                    <br>
+
+                    Status: <br> 
+                    <select name="status" required>
+                        {%for statu in status%}
+                            <option {% if statu == mensagem.status %} selected {%endif%} 
+                            value={{statu}}>{{statu}}
+                        </option>
+                        {%endfor%}
+                    </select>                    
+
+                    <br>
+
+                    <label for="">Data de envio: </label><br>
+                    <input class="form-control formTo" type="date" name="dtenvio" placeholder="00/00/0000" value="{{mensagem.dtenvio}}" required/>
+                    
+                    <br>
+                
+                    <label for="">Data de resposta: </label><br>
+                    <input class="form-control formTo" type="date" name="dtresposta" placeholder="00/00/0000" value="{{mensagem.dtresposta}}" required/>
+                
+                    <br>
+                
+                    <label for="">Resposta: </label><br>
+                    <input class="form-control formTo" type="text" name="resposta" maxlength="1000" placeholder="Área de texto" value="{{mensagem.resposta}}"/>
+
+                    <br>
+                    
+                     Aluno: <br>
+                    <select name="idaluno" required>
+                        {%for aluno in alunos%}
+                            <option {% if aluno.id == mensagem.idaluno.id %} selected {%endif%}
+                                value={{aluno.id}}>{{aluno.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+
+                     Professor: <br>
+                    <select name="idprofessor" required>
+                        {%for professor in professores_lista%}
+                            <option {% if professor.id == mensagem.idprofessores.id %} selected {%endif%}
+                                value={{professor.id}}>{{professor.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    <br>
+
+                    <div style="text-align: center;">
+                    <button type="submit" class="btn-yy" style="color: white;">
+                        Enviar
+                    </button>
+        </div>
+</div>
+</form>
+{% endblock  %}

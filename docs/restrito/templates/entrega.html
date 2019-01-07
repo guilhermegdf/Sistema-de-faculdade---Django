@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <article>
+        <a href="/entrega/incluir/">
+            <div class="btn-ww">
+                    <p class="add-aluno">Incluir nova Entrega</p>
+                </div>
+        </a>
+        {% for item in entrega_lista %}
+            <div class="box_type">
+                <div class="text-content">
+                    <br>
+                    <img src='{{ img }}' alt="">
+                    <h2> <a class="a_cursos" href="/entrega/{{item.id}}"> {{ item.titulo }} </a> </h2>
+                    <br>
+                    <div class="flex">
+                    <a class="btn-xx" href="/entrega/alterar/{{item.id}}">Alterar</a><br/>
+                    <a class="btn-yy" href="/entrega/remover/{{item.id}}">Remover</a>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+    </article>
+{% endblock  %}

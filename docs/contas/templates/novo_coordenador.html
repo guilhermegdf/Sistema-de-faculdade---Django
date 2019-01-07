@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Login: </label><br>
+                    <input class="form-control formTo" type="text" name="login" maxlength="1000" placeholder="login" value="{{coordenador.login}}" reiquired />
+
+                    <br>
+                    <br>
+                
+                    <label for="">Senha: </label><br>
+                    <input class="form-control formTo" type="password" name="senha" maxlength="10" placeholder="senha" value="{{coordenador.senha}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Nome: </label><br>
+                    <input class="form-control formTo" type="text" name="nome" maxlength="20" placeholder="nome" value="{{coordenador.nome}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">E-mail: </label><br>
+                    <input class="form-control formTo" type="email" name="email" maxlength="1000" placeholder="email" value="{{coordenador.email}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Celular: </label><br>
+                    <input class="form-control formTo" type="text" name="celular" maxlength="15" placeholder="celular" value="{{coordenador.celular}}" required/>
+    
+                    <br>
+                    <br>
+
+                    <label for="">Data de expiração: </label><br>
+                    <input class="form-control formTo" type="date" name="dtexpiracao" placeholder="01/01/0001" value="{{coordenador.dtexpiracao}}" required/>
+                    
+                    <br>
+                    <br>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn-yy" style="color: white;">
+                        Enviar
+                    </button>
+        </div>
+</div>
+</form>
+{% endblock  %}

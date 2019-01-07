@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Titulo: </label><br>
+                    <input class="form-control formTo" type="text" name="titulo" maxlength="100" placeholder="titulo" value="{{altentrega.titulo}}"  reiquired /></input>
+
+                    <br>
+
+                    <label for="">Resposta: </label><br>
+                    <input class="form-control formTo" type="text" name="resposta" maxlength="100" placeholder="resposta" value="{{altentrega.resposta}}"  reiquired /></input>
+
+                    <br>
+
+                    <label for="">Data de entrega: </label><br>
+                    <input class="form-control formTo" type="date" name="dtentrega" maxlength="100" placeholder="dtentrega" value="{{altentrega.dtentrega}}" required></input>
+
+                    <br>
+
+                    Status: <br>
+                    <select name="status" required>
+                        {%for tipo in status%}
+                            <option {% if tipo == entrega.status %} selected {%endif%} 
+                                value={{tipo}}>{{tipo}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+
+                    <br>
+                    <label for="">Nota: </label><br>
+                    <input class="form-control formTo" type="number" name="nota" maxlength="100" placeholder="nota" value="{{altentrega.nota}}"  reiquired /></input>
+                   
+                    <br>
+                    <label for="">Data de avaliação: </label><br>
+                    <input class="form-control formTo" type="date" name="dtavaliacao" maxlength="100" placeholder="dtavaliacao" value="{{altentrega.dtavaliacao}}" required></input>
+
+                   
+                    <br>
+                    <label for="">Observação: </label><br>
+                    <input class="form-control formTo" type="text" name="obs" maxlength="100" placeholder="obs" value="{{altentrega.obs}}"  reiquired /></input>
+
+                    <br>
+                    Aluno:<br>
+                    <select name="idaluno" required>
+                        {%for aluno in aluno_lista%}
+                            <option {% if aluno.id == altentrega.idaluno.id %} selected {%endif%}
+                                value={{aluno.id}}>{{aluno.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+
+                    <br>
+                    Coordenador:<br>
+                    <select name="idcoordenador" required>
+                        {%for coordenador in coordenador_lista%}
+                            <option {% if coordenador.id == altentrega.idcoordenador.id %} selected {%endif%}
+                                value={{coordenador.id}}>{{coordenador.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+
+                    <br>
+                    Professor:<br>
+                    <select name="idprofessores" required>
+                        {%for professor in professores_lista%}
+                            <option {% if professor.id == altentrega.idprofessores.id %} selected {%endif%}
+                                value={{professor.id}}>{{professor.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+
+                    <br>
+
+
+                    <br>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-yy" style="color: white;">
+                            Enviar
+                        </button>
+                </div>
+        </div>
+</div>
+</form>
+{% endblock  %}

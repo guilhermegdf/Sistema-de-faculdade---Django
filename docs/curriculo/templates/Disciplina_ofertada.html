@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <article>
+        <a href="/disciplina_ofertada/incluir/">
+            <div class="btn-ww">
+                <p class="add-aluno">Incluir novo Disciplina Ofertada</p>
+            </div>
+        </a>
+        {% for item in Discip_of %}
+            <div class="box_type">
+                <div class="text-content">
+                    <br>
+                    <h2> {{ item.iddisciplina.nome }} </h2>
+                    <br>
+                    <div class="flex">  
+                    <a class="btn-xx" href="/disciplina_ofertada/alterar/{{item.id}}">Alterar</a><br/>
+                    <a class="btn-yy" href="/disciplina_ofertada/remover/{{item.id}}">Remover</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </article>
+{% endblock  %}

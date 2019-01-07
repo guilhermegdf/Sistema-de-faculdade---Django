@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <article>
+        <a href="/atividade_vinculada/incluir/">
+            <div class="btn-ww">
+                    <p class="add-aluno">Incluir novo Atividade Vinculada</p>
+                </div>
+        </a>
+        {% for item in atividade_vinc_lista %}
+            <div class="box_type">
+                <div class="text-content">
+                    <br>
+                    <img src='{{ img }}' alt="">
+                    <h2> <a class="a_cursos" href="/atividade_vinculada/{{item.id}}"> {{ item.rotulo }} </a> </h2>
+                    <br>
+                    <div class="flex"> 
+                    <a class="btn-xx" href="/atividade_vinculada/alterar/{{item.id}}">Alterar</a><br/>
+                    <a class="btn-yy" href="/atividade_vinculada/remover/{{item.id}}">Remover</a>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+    </article>
+{% endblock  %}

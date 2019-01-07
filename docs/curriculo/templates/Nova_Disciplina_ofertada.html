@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Inicio das matriculas: </label><br>
+                    <input class="form-control formTo" type="date" name="dtinicniomatricula" placeholder="00/00/0000" value="{{disciplinaof.dtinicniomatricula}}" reiquired />
+
+                    <br>
+                    <br>
+                
+                    <label for="">Fim das matriculas: </label><br>
+                    <input class="form-control formTo" type="date" name="dtfimmatricula" placeholder="00/00/0000" value="{{disciplinaof.dtfimmatricula}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Ano: </label><br>
+                    <input class="form-control formTo" type="number" name="ano" maxlength="1" placeholder="0" value="{{disciplinaof.ano}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Semestre: </label><br>
+                    <input class="form-control formTo" type="text" name="semestre" maxlength="1" placeholder="0" value="{{disciplinaof.semestre}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Turma: </label><br>
+                    <input class="form-control formTo" type="text" name="turma" placeholder="A" value="{{disciplinaof.turma}}" required/>
+                    
+                    <br>
+                    <br>
+                
+                    <label for="">Metodologia: </label><br>
+                    <input class="form-control formTo" type="text" name="metodologia" placeholder="Área de texto" value="{{disciplinaof.metodologia}}" required/>
+                
+                    <br>
+                    <br>
+                
+                    <label for="">Recursos: </label><br>
+                    <input class="form-control formTo" type="text" name="recursos" maxlength="1000" placeholder="Área de texto" value="{{disciplinaof.recursos}}"/>
+                   
+                    <br>
+                    <br>
+                    
+                    <label for="">Criterio de avaliação: </label><br>
+                    <input class="form-control formTo" type="text" name="criterioavaliacao" maxlength="1000" placeholder="area de texto" value="{{disciplinaof.criterioavaliacao}}"/>
+                  
+                    <br>
+                    <br>
+                  
+                    <label for="">Plano de aulas: </label><br>
+                    <input class="form-control formTo" type="text" name="planodeaulas" maxlength="1000" placeholder="Área de texto" value="{{disciplinaof.planodeaulas}}"/>
+                  
+                    <br>
+                    <br>
+                  
+                    Professor: <br>
+                    <select name="idprofessor" required>
+                        {%for professor in professores_lista%}
+                            <option {% if professor.id == disciplinaof.idprofessores.id %} selected {%endif%}
+                                value={{professor.id}}>{{professor.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    <br>
+                    Coordenador: <br>
+                    <select name="idcoordenador" required>
+                        {%for coordenador in coordenadores_lista%}
+                            <option {% if coordenador.id == disciplinaof.idcoordenador.id %} selected {%endif%}
+                                value={{coordenador.id}}>{{coordenador.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    <br>
+                    Curso: <br>
+                    <select name="idcurso" required>
+                        {%for curso in curso_lista%}
+                            <option {% if curso.id == disciplinaof.idcurso.id %} selected {%endif%}
+                                value={{curso.id}}>{{curso.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    <br>
+                    Disciplina: <br>
+                    <select name="iddisciplina" required>
+                        {%for disciplina in disciplina_lista%}
+                            <option {% if disciplina.id == disciplinaof.iddisciplina.id %} selected {%endif%}
+                                value={{disciplina.id}}>{{disciplina.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    <br>
+                    <div style="text-align: center;">
+                    <button type="submit" class="btn-yy" style="color: white;">
+                        Enviar
+                    </button>
+                </div>
+        </div>
+</div>
+</form>
+{% endblock  %}

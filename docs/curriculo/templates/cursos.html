@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <article>
+            <a href="/cursos/incluir/">
+                <div class="btn-ww">
+                        <p class="add-aluno">Incluir novo Curso</p>
+                </div>
+            </a>
+        {% for item in cursos_lista %}
+            <div class="box_type">
+                <div class="text-content">
+                    <br>
+                    <img src='{{ img }}' alt="">
+                    <h2> <a class="a_cursos" href="/cursos/{{item.sigla}}"> {{ item.nome }} </a> </h2>
+                    <br>
+                    <div class="flex">
+                        <a class="btn-xx"href="/cursos/alterar/{{item.id}}">Alterar</a><br/>
+                        <a class="btn-yy"href="/cursos/remover/{{item.id}}">Remover</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </article>
+{% endblock  %}

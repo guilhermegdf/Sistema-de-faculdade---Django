@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <article>
+        {% for item in curriculo %}
+            <div class="box_type">
+                <div class="text-content">
+                    <br>
+                    <h2> <a class="a_cursos" href="/{{item}}"> {{ item }} </a> </h2>
+                    <br>
+                </div>
+            </div>
+        {% endfor %}
+    </article>
+{% endblock  %}

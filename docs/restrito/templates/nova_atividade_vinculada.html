@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Rotulo: </label><br>
+                    <input class="form-control formTo" type="text" name="rotulo" maxlength="100" placeholder="rotulo" value="{{atividadevinc.rotulo}}"  reiquired /></input>
+
+                    <br>
+                
+                    <label for="">Data de inicio: </label><br>
+                    <input class="form-control formTo" type="date" name="dtiniciorespostas" maxlength="100" placeholder="descricao" value="{{atividadevinc.dtiniciorespostas}}" required></input>
+
+                    <br>
+
+                    <label for="">Data de fim: </label><br>
+                    <input class="form-control formTo" type="date" name="dtfimrespostas" maxlength="100" placeholder="conteudo" value="{{atividadevinc.dtfimrespostas}}" required></input>
+
+                    <br>
+
+                    Status: <br>
+                    <select name="status" required>
+                        {%for tipo in status%}
+                            <option {% if tipo == atividadevinc.status %} selected {%endif%} 
+                                value={{tipo}}>{{tipo}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+
+                    Atividade:<br>
+                    <select name="idatividade" required>
+                        {%for atividade in atividades_lista%}
+                            <option {% if atividade.id == atividadevinc.idatividade.id %} selected {%endif%}
+                                value={{atividade.id}}>{{atividade.titulo}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                        <br>
+                    Professor:<br>
+                    <select name="idprofessores" required>
+                        {%for professor in professores_lista%}
+                            <option {% if professor.id == atividadevinc.idprofessores.id %} selected {%endif%}
+                                value={{professor.id}}>{{professor.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    Disciplina Ofertada:<br>
+                    <select name="iddisciplinaofertada" required>
+                        {%for discof in disciplinaof_lista%}
+                            <option {% if discof.id == atividadevinc.iddisciplinaofertada.id %} selected {%endif%}
+                                value={{discof.id}}>{{discof.iddisciplina.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    <br>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-yy" style="color: white;">
+                            Enviar
+                        </button>
+                </div>
+        </div>
+</div>
+</form>
+{% endblock  %}

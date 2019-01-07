@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+                    Status: <br>
+                    <select name="status" required>
+                        {%for tipo in status%}
+                            <option {% if tipo == solicitmatricula.status %} selected {%endif%} 
+                                value={{tipo}}>{{tipo}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+
+                    <label for="">Data de solicitação: </label><br>
+                    <input class="form-control formTo" type="date" name="dtsolicitacao" maxlength="100"  value="{{solicitmatricula.dtsolicitacao}}" required></input>
+                    <br>
+                    Aluno:<br>
+                    <select name="idaluno" required>
+                        {%for aluno in aluno_lista%}
+                            <option {% if aluno.id == solicitmatricula.idaluno.id %} selected {%endif%}
+                                value={{aluno.id}}>{{aluno.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+
+                    <br>
+                    Coordenador:<br>
+                    <select name="idcoordenador" required>
+                        {%for coordenador in coordenador_lista%}
+                            <option {% if coordenador.id == solicitmatricula.idcoordenador.id %} selected {%endif%}
+                                value={{coordenador.id}}>{{coordenador.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+
+                    <br>
+                    Disciplina ofertada:<br>
+                    <select name="idprofessores" required>
+                        {%for disciplina in discof_lista%}
+                            <option {% if disciplina.id == solicitmatricula.idprofessores.id %} selected {%endif%}
+                                value={{disciplina.id}}>{{disciplina.iddisciplina.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+
+                    <br>
+
+
+                    <br>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-yy" style="color: white;">
+                            Enviar
+                        </button>
+                </div>
+        </div>
+</div>
+</form>
+{% endblock  %}

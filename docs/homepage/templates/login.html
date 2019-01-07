@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+
+<div class="box_type">
+    <div class="text-content">
+        <form action="" method="POST">
+                <h4> <br> Login </h4>
+                <hr>
+            <div class="container-fluid boxBtn">
+            <div class="form-to">
+                <div style="text-align: center;">
+                <label  for="usuario"><b>Usuario: </b></label>
+                <input id="usuario" class="form-control formTo" type="text" placeholder="Digite o seu usuario" name="email" required>
+                <br>
+                <br>
+                <label for="senha"><b>Senha: </b></label>
+                <input id="senha" class="form-control formTo" type="password" placeholder="Digite sua senha" name="senha" required>
+                <br>
+                <br>
+                <input type="checkbox" id="me_lembre" name="me_lembre" unchecked />
+
+                <label for="me_lembre">Me mantenha logado</label>
+                <br>
+                <br>
+                <button type="submit" class="btn-yy">Login</button>
+                <br>
+                <br>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock  %}

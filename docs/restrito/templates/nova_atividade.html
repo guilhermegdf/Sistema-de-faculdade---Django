@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                        
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Titulo: </label><br>
+                    <input class="form-control formTo" type="text" name="titulo" maxlength="100" placeholder="titulo" value="{{atividade.titulo}}"  reiquired /></input>
+
+                    <br>
+                    <br>
+                
+                    <label for="">Descrição: </label><br>
+                    <input class="form-control formTo" type="text" name="descricao" maxlength="100" placeholder="descricao" value="{{atividade.descricao}}" required></input>
+
+                    <br>
+                    <br>
+
+                    <label for="">Conteúdo: </label><br>
+                    <input class="form-control formTo" type="text" name="conteudo" maxlength="100" placeholder="conteudo" value="{{atividade.conteudo}}" required></input>
+
+                    <br>
+
+                    Tipo: <br>
+                    <select name="tipo" required>
+                        {%for tipo in tipos%}
+                            <option {% if tipo == atividade.tipo %} selected {%endif%} 
+                                value={{tipo}}>{{tipo}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+
+                    Professor:<br>
+                    <select name="idprofessores" required>
+                        {%for professor in professores_lista%}
+                            <option {% if professor.id == atividade.idprofessores.id %} selected {%endif%}
+                                value={{professor.id}}>{{professor.nome}}
+                            </option>
+                        {%endfor%}
+                    </select>
+                    <br>
+                    <br>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-yy" style="color: white;">
+                            Enviar
+                        </button>
+                </div>
+        </div>
+</div>
+</form>
+{% endblock  %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<div class="disciplina box_type">
+        <div class="text-content">
+            <form method="POST" action="">
+                    <h4> <br> Formulário. </h4>
+                    <hr>
+            <label for="">Nome do Curso: </label><br>
+                    <input class="form-control formTo" type="text" name="nome" maxlength="100" placeholder="Nome do Curso" value="{{curso.nome}}" reiquired />
+
+                    <br>
+                    <br>
+                
+                    <label for="">Sigla do curso: </label><br>
+                    <input class="form-control formTo" type="text" name="sigla" maxlength="3" placeholder="Sigla do Curso" value="{{curso.sigla}}" required/>
+                    
+                    <br>
+                    <br>
+                    
+                <div style="text-align: center;">
+                    <button type="submit" class="btn-yy" style="color: white;">
+                        Enviar
+                    </button>
+        </div>
+</div>
+</form>
+{% endblock  %}

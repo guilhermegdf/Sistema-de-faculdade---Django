@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <b>{{titulo_1}}</b><br/>
+ <p>{{titulo_2}}</p>
+ <table>
+        <tr>
+        {%for i in semestre%}
+          <th>{{i}}</th>
+          {%endfor%}
+        </tr>
+        <tr>
+            {%for x in disciplinas_1%}
+            <td><a href="{{x.link}}">{{x.name}}</a></td>
+            {%endfor%}
+        </tr>
+        <tr>
+            {%for x in disciplinas_2%}
+            <td><a href="{{x.link}}">{{x.name}}</a></td>
+            {%endfor%}
+
+        </tr>
+        <tr>
+            {%for x in disciplinas_3%}
+            <td><a href="{{x.link}}">{{x.name}}</a></td>
+            {%endfor%}
+        </tr>
+        <tr>
+            {%for x in disciplinas_4%}
+            <td><a href="{{x.link}}">{{x.name}}</a></td>
+            {%endfor%}
+        </tr>
+        <tr>
+            {%for x in disciplinas_5%}
+            <td><a href="{{x.link}}">{{x.name}}</a></td>
+            {%endfor%}
+        </tr>
+        <tr>
+            {%for x in disciplinas_6%}
+            <td><a href="{{x.link}}">{{x.name}}</a></td>
+            {%endfor%}
+        </tr>
+      </table>
+{% endblock  %}

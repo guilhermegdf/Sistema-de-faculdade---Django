@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+    <article>
+        <div class="align-img-ads">
+            <img src="http://www.fatene.edu.br/site/media/k2/categories/30.jpg" alt="ads" style="width:50%" class="shadow" align="middle">
+        </div>    
+       <div class="box-curso-detail">
+            <div class="text-content"> 
+                <br>
+                    <p>
+                    <b>{{titulo_1 }}</b><br/>
+                        {{titulo_2}}<br/>
+                    <br>
+                    {%for i in sobre_curso%}
+                        {{i}}<br/>
+                        <br>
+                    {%endfor%}
+                    </p>
+                    <p>
+                        {{carga_horario}}
+                    </p>
+                    <p>
+                        <a href="{{link}}"> {{ semestres }} </a>
+                    </p>
+                    <p>
+                        {{duração}}
+                    </p>
+                <br>
+            </div>
+       </div>
+    </article>
+{% endblock  %}

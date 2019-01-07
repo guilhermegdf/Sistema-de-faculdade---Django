@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<article>
+        <div class="box_type">
+            <div class="text-content">
+                <form method="POST" action="">
+                    <h1>Remover:</h1>
+                    <br>
+                    <h2>Tem certeza que deseja deletar {{nome.nome}}?</h2>
+                    <br>
+                    <div style="text-align: center;">
+                            <button  type="submit" class="btn-yy" style="color: white;">
+                                Deletar
+                            </button>
+                </div> 
+            </div>
+        </div>
+    </form>
+</article>
+{% endblock  %}
